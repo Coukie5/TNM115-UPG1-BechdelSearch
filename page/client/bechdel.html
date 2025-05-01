@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>BechdelWebsite</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">BechdelWebsite</a>
+        </div>
+        <div class="nav-items">
+            <ul>
+                <li><a class="nav-offsite" href="about.html">How it works</a></li>
+                <li><a class="nav-onsite" href="bechdel.html">Bechdel Test</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="div-topsort-container">
+        <div class="search-sort-container">
+            <div class="search-movie-bechdel">
+                <label for="moviename">Movies</label>
+                <div class="search-movie-bechdel-container">
+                    <input type="text" id="moviename" name="moviename" minlength="1" placeholder="Search movie">
+                    <button class="search-button-bechdel" onclick="searchMovie()"></button>
+                </div>
+            </div>
+            <div>
+                <label class="sort-text">Sort by:</label>
+                <select class="sortMenu" id="sortOptions" onchange="sortBy()">
+                    <option value="votes">Popularity</option>
+                    <option value="name">Name</option>
+                    <option value="rating">Rating</option>
+                    <option value="runtime">Runtime</option>
+                    <option value="bechdel">Bechdel</option>
+                    <option value="year">Year</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <button class="filter-button" onclick="filterDiv()">Filter</button> 
+            <div id="filter-box"></div>
+        </div>
+    </div>
+
+    <div class="bechdel-movie-container">
+        <div class="bechdel-calc-box">
+            <h3 class="h3-criteria">Bechdel Test result</h3>
+            <h4 class="h3-criteria">Based on shown movies</h4>
+            <div class="score-container">
+                <div class="score-text">
+                    <div class="score-item">
+                        <p>Number of movies got 0: </p>
+                    </div>
+                    <div class="score-item">
+                        <p>Number of movies got 1:</p>
+                    </div>
+                    <div class="score-item">
+                        <p>Number of movies got 2:</p>
+                    </div>
+                    <div class="score-item">
+                        <p>Number of movies got 3:</p>
+                    </div>
+                    <div class="score-item">
+                        <p class="average-score">Average score:</p>
+                    </div>
+                </div>
+                <div class="score-result-container">
+                    <div id="score-result0" class="score-result">
+                    </div>
+                    <div id="score-result1" class="score-result">
+                    </div>
+                    <div id="score-result2" class="score-result">
+                    </div>
+                    <div id="score-result3" class="score-result">
+                    </div>
+                    <div id="score-result-average" class="score-result">
+                    </div>
+                </div>
+            </div>
+            <div class="check-score" onclick="calculate()">Check bechdel score</div>
+        </div>
+        <div id="target-movies">
+            <div id="page-buttons">
+                <button class="page-button" onclick="handlePage('back')" id="1">Back</button>
+                <button class="page-button" onclick="handlePage('next')" id="1">Next</button>
+            </div>
+        </div>
+    </div>
+        
+    <footer>
+        <div class="footer-container">
+            <div class="footer-title">
+                <a href="index.html"><h2>BechdelWebsite</h2></a>
+            </div>
+            <div class="footer-items">
+                <ul>
+                    <li><a href="about.html">How it works</a></li>
+                    <li><a href="bechdel.html">Bechdel Test</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
